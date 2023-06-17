@@ -10,28 +10,28 @@
     <style>
       #banner{
         object-fit:cover;
-        height:360px;
+        height:400px;
         width:100%;
       }
     </style>
   </head>
   <body>
+    {% include 'widgets/navbar.html' %}
+     <img id='banner' src="https://careers-website-1--bryanmwai.repl.co/static/careers.jpg" class="img-fluid">
     <div class="container">
-      <h1 class="text-center mt-2 mb-2">
-        Careers page
-      </h1>
-      <img id='banner' src="https://careers-website-1--bryanmwai.repl.co/static/careers.jpg" class="img-fluid">
       <h2 class="text-center">
         About us
       </h2>
-      <p class="lead">
-        Et culpa occaecat enim minim labore dolore duis dolore cillum pariatur est sint magna. Culpa amet consequat duis sed adipiscing dolore ex pariatur laborum ex enim voluptate. Consectetur enim ullamco quis reprehenderit proident enim commodo voluptate voluptate culpa qui eiusmod tempor proident. In non dolor ex lorem consectetur eu nulla fugiat amet.
-
-        
-  Ut incididunt sunt ex voluptate nostrud culpa ea veniam lorem elit cillum elit non. Cillum amet culpa reprehenderit consequat consectetur aliquip minim lorem ullamco tempor anim elit magna sit. Aliqua anim aliqua mollit irure aliquip do laborum velit ut qui. Eiusmod quis esse ipsum voluptate enim nisi ad tempor laboris dolore id eiusmod.
-  
-  Incididunt consequat excepteur proident in exercitation labore culpa fugiat amet mollit ea culpa irure in consectetur esse ea occaecat excepteur. Veniam anim in laboris culpa laborum veniam laborum mollit ea amet lorem do velit tempor dolore ea. Ex voluptate laborum minim proident sit excepteur duis ipsum anim pariatur anim. Reprehenderit ullamco exercitation adipiscing nostrud consectetur reprehenderit veniam eu id incididunt ipsum dolor occaecat.
-      </p>
+      <div class="row" style="margin-bottom:16px;">
+        <div class="col-md-6">
+        <p class="lead">
+          Et culpa occaecat enim minim labore dolore duis dolore cillum pariatur est sint magna. Culpa amet consequat duis sed adipiscing dolore ex pariatur laborum ex enim voluptate. Consectetur enim ullamco quis reprehenderit proident enim commodo voluptate voluptate culpa qui eiusmod tempor proident. In non dolor ex lorem consectetur eu nulla fugiat amet.Et culpa occaecat enim minim labore dolore duis dolore cillum pariatur est sint magna. Culpa amet consequat duis sed adipiscing dolore ex pariatur laborum ex enim voluptate. Consectetur enim ullamco quis reprehenderit proident enim commodo voluptate voluptate culpa qui eiusmod tempor proident. In non dolor ex lorem consectetur eu nulla fugiat amet.
+        </p>
+        </div>
+        <div class="d-none d-md-block col-md-6">
+          <img src="/static/people.jpg" style="height:320px;object-fit:cover;border-radius:4px;">
+        </div>
+      </div>
       <h2 class="text-center">
         Open positions
       </h2>
@@ -41,11 +41,11 @@
         {% endfor %}
       </p>
       <div class="d-grid gap-2 mt-4">
-        <button type="button" class="btn btn-outline-secondary btn-lg">Contact us</button>
+        <a  href="mailto:machariabrian3@gmail.com?subject=Contact Us" type="button" class="btn btn-outline-secondary btn-lg">Contact us</a>
         
       </div>
-      <p class="text-center mt-4">Copyright 2023,Bryan</p>
-       
+      
+       {% include 'widgets/footer.html' %}
     </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
