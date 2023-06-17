@@ -4,9 +4,9 @@
     <div>
       <b>Location </b> : {{job['location']}}
     </div>
-    {% if 'salary' in job %}
+    {% if job['salary'] in job %}
     <div>
-      <b>Salary </b> : {{job['salary']}}
+      <b>Salary </b> : {{job['currency']}} {{ '{:,.0f}'.format(job['salary']) }}
     </div>
     {% endif %}
   </div>

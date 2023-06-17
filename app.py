@@ -1,8 +1,9 @@
 from flask import Flask, render_template, jsonify
+from db import load_jobs
 
 app = Flask(__name__)
 
-JOBS = [{
+JOBS_static = [{
   "id": 1,
   "title": "Software Engineer",
   "location": "San Francisco",
@@ -56,12 +57,14 @@ JOBS = [{
 
 @app.route("/")
 def index():
-  return render_template('home.html', jobs=JOBS)
+  jobs = load_jobs()
+  return render_template('home.html', jobs=jobs)
 
 
 @app.route("/apiv1/jobs")
 def job_list():
-  return jsonify(JOBS)
+  jobs = load_jobs()
+  return jsonify(jobs)
 
 
 if __name__ == "__main__":
