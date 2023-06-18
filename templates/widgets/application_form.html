@@ -1,0 +1,36 @@
+<div class="application-form border border-light-subtle" style="padding:8px;border-radius:8px;">
+  <h2>Job Application Form</h2>
+  <form action="/job/{{job['id']}}/apply" method="POST">
+    <div class="mb-3">
+      <label for="full-name" class="form-label">Full Name:</label>
+      <input type="text" class="form-control" id="full-name" name="full-name" required>
+    </div>
+    
+    <div class="mb-3">
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    
+    <div class="mb-3">
+      <label for="linkedin" class="form-label">LinkedIn:</label>
+      <input type="text" class="form-control" id="linkedin" name="linkedin">
+    </div>
+    
+    <div class="mb-3">
+      <label for="education" class="form-label">Education:</label>
+      <textarea class="form-control" id="education" name="education" rows="4" required></textarea>
+    </div>
+    
+    <div class="mb-3">
+      <label for="work-experience" class="form-label">Work Experience:</label>
+      <textarea class="form-control" id="work-experience" name="work-experience" rows="4" required></textarea>
+    </div>
+    
+    <div class="mb-3">
+      <label for="resume" class="form-label">Resume url:</label>
+      <input type="text" class="form-control" id="resume" name="resume" required>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit Application</button>
+  </form>
+</div>

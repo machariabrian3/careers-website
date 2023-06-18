@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, text
+from sqlalchemy import create_engine, text, bindparam
 import os
 
 db_conn_string = os.environ['DB_CONNECTION_STR']
@@ -28,3 +28,23 @@ def load_job_page(id):
       columns = result.keys()
       values = [row[i] for i in range(len(columns))]
       return dict(zip(columns, values))
+
+
+def apply_job(job_id, data):
+  with engine.connect() as conn:
+    query = text("""
+            INSERT INTO applications
+            (job_id, full_name, email, linkedin_url, education, work_experience, resume_url, application_status, create_at, update_at)
+            VALUES
+            (:job_id, :full_name, :email, :linkedin_url, :education, :work_experience, :resume_url, 'PENDING', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+        """)
+    parameters = {
+      "job_id": job_id,
+      "full_name": data["full-name"],
+      "email": data["email"],
+      "linkedin_url": data["linkedin"],
+      "education": data["education"],
+      "work_experience": data["work-experience"],
+      "resume_url": data["resume"]
+    }
+    conn.execute(query, parameters)

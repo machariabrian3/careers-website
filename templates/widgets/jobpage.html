@@ -29,6 +29,7 @@
        </ul>
        <h5>Expected salary</h5>
        <p>{{job['currency']}} {{ '{:,.0f}'.format(job['salary']) }}</p>
+       {% include 'widgets/application_form.html' %}
        
         {% include 'widgets/footer.html' %}
      </div>
