@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify
-from db import load_jobs
+from db import load_jobs, load_job_page
 
 app = Flask(__name__)
 
@@ -65,6 +65,14 @@ def index():
 def job_list():
   jobs = load_jobs()
   return jsonify(jobs)
+
+
+@app.route("/job/<id>")
+def show_job(id):
+  job = load_job_page(id)
+  if not job:
+    return "Not found", 404
+  return render_template('widgets/jobpage.html', job=job)
 
 
 if __name__ == "__main__":
